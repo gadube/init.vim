@@ -1,3 +1,4 @@
+
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
@@ -18,9 +19,16 @@ Plug 'morhetz/gruvbox'
 
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'honza/vim-snippets'
-
+Plug 'itchyny/lightline.vim'
 " Initialize plugin system
 call plug#end()
+
+"Lightline configurations
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+set noshowmode
 
 inoremap jk <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
